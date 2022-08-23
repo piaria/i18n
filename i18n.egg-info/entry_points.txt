@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        i18n=i18n:cli
+    
