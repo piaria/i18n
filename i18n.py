@@ -40,7 +40,7 @@ def cli():
 
 @cli.command()
 def translate():
-    """ Generated the translation for the given languajes """
+    """ Generates the translation file for each languaje """
     for lang in get_language_codes():
         lang_path = 'translations/' + lang + '/LC_MESSAGES/'
         Popen(['mkdir', '-p', lang_path]).communicate()
@@ -51,9 +51,9 @@ def translate():
 
 
 @cli.command()
-@click.option('--output', type=click.File('w'), default="export.csv", required=False)
+@click.option('--output', type=click.File('w'), default="transtations.csv", required=False)
 def export(output):
-    """ Exports the translations to the given filename """
+    """ Exports the translations to the given filename (csv)"""
     messages: Dict = {}
 
     for lang in get_language_codes():
